@@ -35,3 +35,23 @@ Your Pages site will use the layout and styles from the Jekyll theme you have se
 ### Support or Contact
 
 Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+
+### Scheduled ChatGPT Usage
+
+A new script `scheduled_chatgpt.py` lets you run ChatGPT prompts automatically. The script uses the `openai` and `schedule` packages.
+
+Example usage to run daily at 9 AM:
+
+```bash
+python scheduled_chatgpt.py "Hello, world" --daily --time 09:00
+```
+
+Replace the prompt with your own text. Set `OPENAI_API_KEY` in your environment to authenticate with OpenAI.
+
+For a weekly run on Mondays at 8 AM:
+
+```bash
+python scheduled_chatgpt.py "Weekly report" --weekly monday --time 08:00
+```
+
+The script will keep running, checking the schedule every second. Use cron or a process manager to run it in the background.
